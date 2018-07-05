@@ -1,0 +1,23 @@
+{
+  "name": "EmpleaT",
+  "authors": [
+    "LYuliana <lindayuliana.romualdo.moreno@alumno.uttehuacan.edu.mx>"
+  ],
+  "description": "Portal Web",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "https://github.com/LYuliana",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "fontawesome": "^5.0.12",
+    "jquery": "^3.3.1"
+  }
+}
