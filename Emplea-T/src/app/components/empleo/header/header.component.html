@@ -1,0 +1,25 @@
+<div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h5 class="text-white h4">
+        <a class="text-white" href="#">Iniciar Sesión</a> | <a class="text-white" href="#">Registrarse</a>
+      </h5>
+      <span class="text-muted">La mejor opción para encontrar empleo en la región y los alrededores de Tehuacán.</span>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <h4 class="text-white h4">Emplea-T | Encuentra un empleo con nosotros</h4>
+    <div class="bg-primary text-center text-white rounded" style="padding:5px">
+      Mis postulaciones: <span class="label label-default" *ngIf="oferta.itemCount > 0"> {{oferta.itemCount}} </span>
+      <div class="">
+        <button type="button" class="btn btn-warning" [disabled] = "oferta.itemCount == 0" routerLink = "/postulaciones">
+          Ver postulaciones.
+        </button>
+      </div>
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+  </nav>
+</div>

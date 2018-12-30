@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <br>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4 text-center">Empleos a los que te has postulado.</h1>
+    </div>
+  </div>
+  <table class="table table-hover">
+  <thead>
+    <tr class="text-center">
+      <th class="text-uppercase" scope="col">N°</th>
+      <th class="text-uppercase" scope="col">Puesto</th>
+      <th class="text-uppercase" scope="col">Empresa</th>
+      <th class="text-uppercase" scope="col">Salario</th>
+      <th class="text-uppercase" scope="col">Horario</th>
+      <th class="text-uppercase" scope="col">Opciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="text-center" *ngFor="let ofert of oferta.lines">
+      <th scope="row">1</th>
+      <td>{{ofert.empleo.nombrePuesto}}</td>
+      <td>{{ofert.empleo.nombreEmpresa}}</td>
+      <td>{{ofert.empleo.sueldo | currency: "MXN": true: "2.2-2"}}</td>
+      <td>{{ofert.empleo.horario}}</td>
+      <td>
+        <button class="btn btn-success" style="margin:5px"> Ver empleo</button>
+        <button class="btn btn-danger" (click) = "oferta.removeLine(ofert.empleo.idOferta)"> Eliminar postulación </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<br><br>
+<div class="text-center">
+  <button class="btn btn-primary" type="button" name="button" routerLink="/oferta">Seguir buscando</button>
+</div>
+<br><br>
+<app-footer></app-footer>

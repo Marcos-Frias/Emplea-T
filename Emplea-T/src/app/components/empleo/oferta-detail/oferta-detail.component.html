@@ -1,0 +1,15 @@
+<app-header></app-header>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div *ngFor="let empresa of empresas">
+        <h1>{{empresa.Nombre}}</h1><br>
+        <h3>{{empresa.direccion}}</h3><br>
+        <h3>{{empresa.sitioweb}}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

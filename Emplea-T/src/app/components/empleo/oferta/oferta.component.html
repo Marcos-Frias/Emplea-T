@@ -1,0 +1,52 @@
+<app-header></app-header>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="slider">
+      <ul>
+        <li>
+          <img src="http://cms.univalle.edu.co/emisora/wp-content/uploads/2015/04/D%C3%ADa-del-trabajo-700x300.jpg" alt="">
+        </li>
+        <li>
+          <img src="http://images.elurbanorural.cl/2014/11/Entrevista-de-Trabajo.jpg" alt="">
+        </li>
+        <li>
+          <img src="http://www.secpho.org/wp-content/uploads/2015/03/Clockwork_KOM_20150219-700x300.jpg" alt="">
+        </li>
+        <li>
+          <img src="https://ventiladoresyextractores.com.mx/wp-content/uploads/2016/04/ventilacion-en-ambientes-de-trabajo-parte1.jpg" alt="">
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row tect-center">
+
+    <div class="col-md-4" *ngFor="let empleo of empleos" style="margin-bottom: 25px">
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="{{empleo.imagenTrabajo}}" alt="Imagen del empleo">
+        <div class="card-body">
+          <h4 class="card-title text-uppercase text-center"><strong>{{empleo.nombrePuesto}}</strong></h4>
+          <p class="card-text"><strong>Descripción: </strong>{{empleo.descripcion | slice: 0:50}}...</p>
+          <p class="card-text"><strong>Empresa: </strong>{{empleo.nombreEmpresa}}</p>
+          <p class="card-text"><strong>Sueldo:</strong>{{empleo.sueldo | currency: "MXN": true: "2.2-2"}}</p>
+          <button class="btn btn-sm btn-info" style="margin: 5px">Ver</button>
+          <button (click)="addPostulacion(empleo)" class="btn btn-sm btn-warning">Postularme</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="center-block">
+        <div class="btn-group">
+          <button  class="btn btn-outline-primary" *ngFor="let number of pageNumber" (click)="changePage(number)" [class.active]="number == selectedPage">{{number}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<br><br>
+<app-footer></app-footer>
